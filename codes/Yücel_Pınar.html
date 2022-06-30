@@ -1,0 +1,178 @@
+<script>
+  // while loop [2]
+  document.write('while loop test<br>');
+  
+  // I am testing the while loop with a boolean expression that is false. If it prints, then it is using posttest. Otherwise its pretest [2].
+  while (false) 
+  {
+    document.write('while loop uses posttest');
+  }  
+  
+  // I am using the while loop to print numbers that are between 1 and 10 [2].
+  counter = 1;
+  
+  while(counter <= 10)
+  {
+    document.write(counter + "<br>");
+    counter = counter + 1;
+  }
+  
+  // do while loop
+  document.write('<br><br>do while loop test<br>');
+  
+  // I am testing the do while loop with a boolean expression that is false. If it prints, then it is using posttest. Otherwise its pretest [2].
+  do
+  {
+    document.write('do while loop uses posttest<br>');
+  }
+  while(false);
+  
+  // I am using the do while loop to print numbers that are between 1 and 10 [2].
+  counter = 1;
+  
+  do
+  {
+    document.write(counter + "<br>");
+    counter = counter + 1;
+  }
+  while(counter <= 10);
+  
+  // for loop test [2]
+  document.write('<br><br>for loop test<br>');
+  
+  // I am testing the for loop with a boolean expression that is false. If it prints, then it is using posttest. Otherwise its pretest [2]. 
+  for(;false;)
+  {
+    document.write('for loop uses posttest');
+  }
+  
+  // I am using for loop to print numbers that are between 1 and 10 [2].
+  counter = 1;
+  
+  for(;counter <= 10;)
+  {
+    document.write(counter + "<br>");
+    counter = counter + 1;   
+  }
+  
+  // break [2]
+  document.write('<br><br>break statement test<br>');
+  
+  // I am testing the break statement. If the while loop prints 1 to 4, then the break statement causes to program to exit the loop [2].
+  counter = 1;
+  
+  while(counter <= 10)
+  {
+    if(counter == 5)
+    {
+      break;
+    }
+    
+    document.write(counter + "<br>");
+    counter++;
+  }
+  
+  counter = 1;
+  document.write("<br>");
+  
+  // I am testing how the break statement works when used inside a while loop inside a while loop. If it prints 1 to 10, then it causes the program to only exit the inner loop. If it prints 1 to 4, then it causes the program to exit both loops [2].
+  while(counter <= 10)
+  {
+    while(counter == 5)
+    {
+      break;
+    }
+    
+    document.write(counter + "<br>");
+    counter++;
+  }
+
+	document.write("<br>");
+
+  // I am testing how the break statement works when used inside a for loop inside a while loop. If it prints 1 to 10, then it causes the program to only exit the inner loop. If it prints 1 to 4, then it causes the program to exit both loops [2].
+  counter = 1;
+  
+  while(counter <= 10)
+  {
+    for(;counter == 5;)
+    {
+      break;
+    }
+    
+    document.write(counter + "<br>");
+    counter++;
+  }
+
+  // I am testing the break statement with a label to exit to the outermost loop. If it prints 0 and 1, then it is working [2].
+  document.write("<br>");
+  i = 0;
+  j = 0;
+  k = 0;
+    
+  breakLabel:
+  while(i < 3)
+  {
+      document.write("i = " + i + "<br>");
+      j = 0;
+      while(j < 3)
+      {
+          k = 0;
+          while(k < 3)
+          {
+              if(i == 1)
+              {
+                  break breakLabel;
+              }
+              k++;
+          }
+          j++;
+      } 
+      i++;
+  }
+  
+  // continue [2]
+  document.write('<br>continue statement test<br>');
+  
+  // I am testing the continue statement. If the while loop prints 1 to 10 except for 5, then the continue statement skips the subsequent statements in the current iteration and takes the control back to the beginning of the loop [2]. 
+  counter = 1;
+  
+  while(counter <= 10)
+  {
+    if(counter == 5)
+    {
+      counter++;
+      continue;
+    }
+    
+    document.write(counter + "<br>");
+    counter++;
+  }  
+  
+  // I am testing the continue statement with a label to continue from the next iteration of the outermost loop. If it prints 2 and 3, then it is working [2].
+  document.write("<br>");
+  i = 0;
+  j = 0;
+  k = 0;
+    
+  continueLabel:
+  while(i < 3)
+  {
+    // Even though it seems meaningless, I am using it like this for the testing purposes. Otherwise it will be an infitine loop [2].
+    i++; 
+    j = 0;
+    while(j < 3)
+    {
+        j++;
+        k = 0;
+        while(k < 3)
+        {
+            k++;
+            if(i == 1)
+            {
+                continue continueLabel;
+            }
+        }
+     } 
+     document.write("i = " + i + "<br>");
+  }
+</script>
